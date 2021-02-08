@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Flex from '../../layout/Flex';
 import EditableInput from './EditableInput';
-import { Button } from 'semantic-ui-react';
+import Button from '../../Button';
 // import Icon from '../../Icon';
 
 const EditableList = (props) => {

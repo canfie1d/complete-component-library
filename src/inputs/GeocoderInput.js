@@ -5,7 +5,7 @@
 
 import { useState, useMemo, useContext, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { Button } from 'formik-semantic-ui';
+import Button from './Button';
 import { Select, Popup } from 'semantic-ui-react';
 import { ModalContext } from '../../contexts/ModalStore';
 import Flex from '../layout/Flex';

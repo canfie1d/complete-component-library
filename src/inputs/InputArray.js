@@ -1,4 +1,4 @@
-import { Button } from 'semantic-ui-react';
+import Button from './Button';
 import { FieldArray } from 'formik';
 import Icon from '../Icon';
 import Flex from '../layout/Flex';

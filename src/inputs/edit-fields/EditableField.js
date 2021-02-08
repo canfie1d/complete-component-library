@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import classNames from 'classnames';
-import { Button } from 'semantic-ui-react';
+import Button from '../../Button';
 import Flex from '../../layout/Flex';
 import ViewSwitcher from '../../ViewSwitcher';
 

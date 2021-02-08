@@ -1,9 +1,10 @@
 import { useRef } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import { Menu, Button } from 'semantic-ui-react';
+import { Menu } from 'semantic-ui-react';
 import { useClickAway } from 'react-use';
 import { useMediaQuery } from '../hooks/useMediaQuery';
+import Button from './Button';
 
 const MenuNav = (props) => {
   const mediaQuery = useMediaQuery();
