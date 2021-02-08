@@ -5,7 +5,7 @@ import SearchInput from '../inputs/SearchInput';
 import { TableContext } from '../../contexts/TableStore';
 import { Header } from 'semantic-ui-react';
 
-const TableFilterFrontEnd = props => {
+const TableFilter = (props) => {
   const [state, dispatch] = useContext(TableContext); // eslint-disable-line
   const [filterText, setFilterText] = useState(
     props.filterText ? props.filterText : ''
@@ -45,7 +45,7 @@ const TableFilterFrontEnd = props => {
                   dispatch({ type: 'SET_FILTER_TEXT', payload: '' });
                 }
               }}
-              onChange={e => {
+              onChange={(e) => {
                 if (props.backendFilter) {
                   setFilterText(e.target.value);
                   // have a wait period of 1 second then search the backend
@@ -75,8 +75,8 @@ const TableFilterFrontEnd = props => {
   );
 };
 
-TableFilterFrontEnd.defaultProps = {
+TableFilter.defaultProps = {
   formatHeader: true,
 };
 
-export default TableFilterFrontEnd;
+export default TableFilter;

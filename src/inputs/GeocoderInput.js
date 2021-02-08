@@ -1,3 +1,8 @@
+/**
+ * TODO Switch to:
+ * https://geocoding.geo.census.gov/geocoder/Geocoding_Services_API.html
+ */
+
 import React, { useState, useMemo, useContext, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Button } from 'formik-semantic-ui';
@@ -8,7 +13,7 @@ import useGeocoder from '../../hooks/useGeocoder';
 import Icon from '../Icon';
 import { normalizeLocationData } from '../../services/util';
 
-const GeocoderInput = props => {
+const GeocoderInput = (props) => {
   const history = useHistory();
   const [state, dispatch] = useContext(ModalContext);
   const { results, loading, setQuery, clearOptions } = useGeocoder(
@@ -59,7 +64,7 @@ const GeocoderInput = props => {
     setFullResults(results);
 
     // Return the text/value pairs of the results for display and selection
-    return results.map(result => {
+    return results.map((result) => {
       const name = result.place_name.replace(/, United States$/, '');
 
       return {
@@ -73,7 +78,7 @@ const GeocoderInput = props => {
     // dropdownSelection = the text/value pair
     // fullSelection = the original return shape from the mapbox call
     const fullSelection = fullResults.find(
-      result => result.id === dropdownSelection.value
+      (result) => result.id === dropdownSelection.value
     );
     // normalize the data to match expected form object shape
     const fullNormalizedSelection = normalizeLocationData(fullSelection);
@@ -109,7 +114,7 @@ const GeocoderInput = props => {
           props.defaultQuery ? props.defaultQuery.postalCode : ''
         }
         search={(options, query) => options}
-        onSearchChange={e => {
+        onSearchChange={(e) => {
           if (props.defaultQuery) history.replace();
           setQuery(e.target.value);
         }}

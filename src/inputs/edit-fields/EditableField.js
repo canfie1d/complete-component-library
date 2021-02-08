@@ -6,16 +6,10 @@ import ViewSwitcher from '../../ViewSwitcher';
 
 // This Component serves as a wrapper that adds edit/save functionality
 // to the other editable fields (i.e. EditableList, EditableDateTime, EditableList)
-const EditableField = props => {
+const EditableField = (props) => {
   const [editingActive, setEditingActive] = useState(
     props.defaultEditingActive
   );
-
-  useEffect(() => {
-    if (props.hasInitialItem) {
-      setEditingActive(true);
-    }
-  }, []); // eslint-disable-line
 
   const editButtonClasses = [
     'editable-field__edit-button',
@@ -47,7 +41,7 @@ const EditableField = props => {
               icon='times'
               type='button'
               aria-label='Cancel'
-              onClick={e => {
+              onClick={(e) => {
                 e.stopPropagation();
                 props.handleCancel();
                 setEditingActive(false);
@@ -60,7 +54,7 @@ const EditableField = props => {
               icon='check'
               type='button'
               aria-label='Save'
-              onClick={e => {
+              onClick={(e) => {
                 e.stopPropagation();
                 props.handleSave();
                 setEditingActive(false);
@@ -76,7 +70,7 @@ const EditableField = props => {
             type='button'
             aria-label='Edit'
             className={classNames(editButtonClasses)}
-            onClick={e => {
+            onClick={(e) => {
               e.stopPropagation();
               setEditingActive(true);
             }}

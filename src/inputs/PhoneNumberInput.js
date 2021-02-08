@@ -4,7 +4,7 @@ import { Form, Input } from 'semantic-ui-react';
 import { Field } from 'formik';
 import { formatPhoneNumber } from '../../services/util';
 
-const PrettyPhoneNumberField = ({
+const PhoneNumberInput = ({
   name,
   label,
   className,
@@ -30,7 +30,7 @@ const PrettyPhoneNumberField = ({
           error = form.errors?.[splitName[splitName.length - 1]];
         }
 
-        const _onChange = e => {
+        const _onChange = (e) => {
           // replace all non number characters
           let v = e.target.value.replace(/[^0-9]/g, '') || '';
 
@@ -44,7 +44,7 @@ const PrettyPhoneNumberField = ({
           onChange && onChange(e);
         };
 
-        const _onKeydown = e => {
+        const _onKeydown = (e) => {
           // allow backspace to ignore the special characters
           if (e.key === 'Backspace') {
             let num = e.target.value.replace(/[^0-9]/g, '');
@@ -57,7 +57,7 @@ const PrettyPhoneNumberField = ({
           }
         };
 
-        const _onBlur = e => {
+        const _onBlur = (e) => {
           form.validateForm(form.values);
         };
 
@@ -107,4 +107,4 @@ const PrettyPhoneNumberField = ({
   );
 };
 
-export default PrettyPhoneNumberField;
+export default PhoneNumberInput;

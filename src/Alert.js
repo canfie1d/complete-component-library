@@ -3,11 +3,11 @@
  */
 
 import React from 'react';
-import { Container, Segment } from 'semantic-ui-react';
+import Container from './layout/Container';
 import Flex from './layout/Flex';
 import Icon from './Icon';
 
-const Alert = props => {
+const Alert = (props) => {
   let sharedStyles = {
     width: '100%',
     transition: 'transform 200ms ease',
@@ -32,7 +32,7 @@ const Alert = props => {
       : 'grey';
 
   return (
-    <Container text as={Segment} color={color} inverted tertiary style={styles}>
+    <Container text asSegment color={color} inverted tertiary style={styles}>
       <Flex justify='space-between'>
         <Flex.Column style={props.topPadding ? { paddingTop: '.5em' } : {}}>
           {props.alert.message && <p>{props.alert.message}</p>}

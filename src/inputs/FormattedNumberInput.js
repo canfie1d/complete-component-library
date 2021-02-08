@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { Input } from 'semantic-ui-react';
 
-const PrettyNumberField = props => {
+const FormattedNumberInput = (props) => {
   const [displayValue, setDisplayValue] = useState(
     `${props.initialValue}${props.inlineAfter}`
   );
 
-  const handleOnChange = e => {
+  const handleOnChange = (e) => {
     if (typeof props.touched !== 'undefined') {
       props.touched[props.name] = true;
     }
@@ -19,7 +19,7 @@ const PrettyNumberField = props => {
     }
   };
 
-  const handleKeydown = e => {
+  const handleKeydown = (e) => {
     if (props.inlineAfter) {
       const total = e.target.value.length;
       const inlineLength = props.inlineAfter.length;
@@ -64,8 +64,8 @@ const PrettyNumberField = props => {
   );
 };
 
-PrettyNumberField.defaultProps = {
+FormattedNumberInput.defaultProps = {
   initialValue: '',
 };
 
-export default PrettyNumberField;
+export default FormattedNumberInput;

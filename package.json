@@ -1,0 +1,38 @@
+{
+  "name": "transition-switch",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "description": "React Router 5 Switch Replacement that adds animations and scroll to top.",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/canfie1d/transition-switch"
+  },
+  "bugs": {
+    "url": "https://github.com/canfie1d/transition-switch/issues"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "babel-preset-react-app": "^10.0.0",
+    "babel-loader": "8.1.0",
+    "copy-webpack-plugin": "^6.2.1",
+    "webpack": "4.44.2",
+    "webpack-cli": "^4.4.0",
+    "yargs": "^16.2.0"
+  },
+  "peerDependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0"
+  },
+  "dependencies": {
+    "animated": "^0.2.2",
+    "prop-types": "^15.7.2",
+    "react-transition-group": "^4.4.1",
+    "react-use": "^15.3.8"
+  },
+  "scripts": {
+    "build": "webpack --config webpack.config.js"
+  }
+}

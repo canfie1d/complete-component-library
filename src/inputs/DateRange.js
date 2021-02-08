@@ -5,7 +5,7 @@ import * as moment from 'moment';
 import DatePicker from './DatePicker';
 import FormikEffect from '../forms/FormikEffect';
 
-const DateRange = props => {
+const DateRange = (props) => {
   const initialValues = { startDate: props.startDate, endDate: props.endDate };
 
   return (
@@ -13,7 +13,7 @@ const DateRange = props => {
       initialValues={initialValues}
       onSubmit={() => {}}
       ignoreLoading
-      render={formikProps => (
+      render={(formikProps) => (
         <>
           <FormikEffect
             values={formikProps.values}
