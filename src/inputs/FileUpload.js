@@ -1,15 +1,15 @@
-import React, { useCallback } from 'react';
+import { useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
 
 // TODO https://github.com/onurzorluer/react-image-file-resizer
 
-const FileUpload = props => {
+const FileUpload = (props) => {
   const onDrop = useCallback((acceptedFiles, fileRejections) => {
-    fileRejections.forEach(file => {
+    fileRejections.forEach((file) => {
       props.handleError(file.errors[0]);
     });
 
-    acceptedFiles.forEach(file => {
+    acceptedFiles.forEach((file) => {
       if (
         file.type ===
         'application/vnd.openxmlformats-officedocument.wordprocessingml.document'

@@ -1,8 +1,4 @@
-/**
- * The main application header that holds some display logic for navigation based on screen size
- */
-
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Menu, Image } from 'semantic-ui-react';
 import Container from './layout/Container';

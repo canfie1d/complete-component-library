@@ -1,8 +1,3 @@
-/**
- * Gateway Component that sets the users app permissions in state to be accessed
- * within the app when determining eligibility
- */
-
 import { useContext, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { usePrevious } from 'react-use';

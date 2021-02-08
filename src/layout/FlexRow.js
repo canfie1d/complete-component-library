@@ -1,11 +1,10 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 /**
  * A flex row is used to lay out content.
  */
-const FlexRow = props => {
+const FlexRow = (props) => {
   const classes = [
     'flex',
     props.wrap && 'flex--wrap',

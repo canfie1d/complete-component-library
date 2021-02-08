@@ -1,12 +1,7 @@
-/**
- * Component that mimics the functionality of react-router-dom's Switch component
- * If routing is disabled, view switching is enabled with IDs on child elements
- */
-import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 const ViewSwitcher = ({ displayedView, children, enableRouting, path }) => {
-  const element = children.find(child => {
+  const element = children.find((child) => {
     if (
       !React.isValidElement(child) ||
       !child ||

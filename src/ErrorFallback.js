@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useUnauthenticatedAxios, useAxios } from './hooks/useAxios';
 import { useHistory, useLocation } from 'react-router-dom';
 import Hero from './components/Hero';

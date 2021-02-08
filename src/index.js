@@ -12,6 +12,7 @@ import EditableTextArea from './inputs/edit-fields/EditableTextArea';
 
 import DatePicker from './inputs/DatePicker';
 import DateRange from './inputs/DateRange';
+import TimeRange from './inputs/TimeRange';
 import DateTimePicker from './inputs/DateTimePicker';
 import FileUpload from './inputs/FileUpload';
 import FormattedNumberInput from './inputs/FormattedNumberInput';

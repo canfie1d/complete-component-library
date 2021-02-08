@@ -1,7 +1,3 @@
-/**
- * If an error is triggered on the FE this error boundary catches the error and displays a user friendly error screen instead of broken code
- */
-import React from 'react';
 import { withRouter } from 'react-router-dom';
 import Hero from './components/Hero';
 import { Image } from 'semantic-ui-react';

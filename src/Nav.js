@@ -1,8 +1,4 @@
-/**
- * The header navigation displayed when on large screen
- */
-
-import React, { useState } from 'react';
+import { useState } from 'react';
 import useAuth from '../hooks/useAuth';
 import { NavLink } from 'react-router-dom';
 import { Menu, Popup } from 'semantic-ui-react';
@@ -11,12 +7,12 @@ import MenuNav from './MenuNav';
 import Icon from './Icon';
 import Flex from './layout/Flex';
 
-const Nav = props => {
+const Nav = (props) => {
   const { loading, isAuthenticated } = useAuth();
   const [navOpen, setNavOpen] = useState(false);
   const [notificationsOpen, setNotificationsOpen] = useState(false);
 
-  const handleNavClick = menu => {
+  const handleNavClick = (menu) => {
     if (menu === 'notifications') {
       setNotificationsOpen(!notificationsOpen);
     } else {

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import moment from 'moment';
 import { Checkbox } from 'semantic-ui-react';
 import Flex from '../layout/Flex';

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import { useContext, useState } from 'react';
 import { Form } from 'formik-semantic-ui';
 import Flex from '../layout/Flex';
 import SearchInput from '../inputs/SearchInput';

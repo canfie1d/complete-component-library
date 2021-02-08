@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Input } from 'semantic-ui-react';
 import { toMoneyString } from '../../util/util';
 import EditableField from './EditableField';

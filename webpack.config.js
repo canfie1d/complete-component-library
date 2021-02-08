@@ -6,18 +6,18 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = () => {
   let plugins = [
-    new CopyWebpackPlugin({
-      patterns: [
-        {
-          from: 'lib/index.js',
-          to: '../demo/src/transition-switch.js',
-          force: true,
-          transform: function (content) {
-            return '/* eslint-disable */\n' + content;
-          },
-        },
-      ],
-    }),
+    // new CopyWebpackPlugin({
+    //   patterns: [
+    //     {
+    //       from: 'lib/index.js',
+    //       to: '../demo/src/transition-switch.js',
+    //       force: true,
+    //       transform: function (content) {
+    //         return '/* eslint-disable */\n' + content;
+    //       },
+    //     },
+    //   ],
+    // }),
   ];
 
   return {

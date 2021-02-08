@@ -1,9 +1,3 @@
-/**
- * A footer component used only on public routes and /account that links to PP and TOS
- */
-
-import React from 'react';
-
 const Footer = () => {
   return (
     <footer className='footer'>

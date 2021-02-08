@@ -1,12 +1,7 @@
-/**
- * Main icon componnent used to manage all instances of icons throughout the app
- */
-
-import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-const Icon = props => {
+const Icon = (props) => {
   const {
     bordered,
     circular,

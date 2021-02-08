@@ -2,7 +2,6 @@
  * Source: https://github.com/turner-industries/formik-semantic-ui/blob/master/example/src/custom/DatePicker.js
  */
 
-import React from 'react';
 import { Form } from 'semantic-ui-react';
 import { Field } from 'formik';
 import moment from 'moment';
@@ -25,7 +24,7 @@ const FormikTimePicker = ({ id, name, label, openValue, fieldProps }) => {
               use12Hours
               minuteStep={10}
               defaultOpenValue={moment(openValue, 'h:mm a')}
-              onChange={time => {
+              onChange={(time) => {
                 form.setFieldValue(name, time, true);
               }}
             />

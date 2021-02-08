@@ -1,4 +1,3 @@
-import React from 'react';
 import classNames from 'classnames';
 import { Form, Input } from 'semantic-ui-react';
 import { Field } from 'formik';

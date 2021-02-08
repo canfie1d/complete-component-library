@@ -1,4 +1,3 @@
-import React from 'react';
 import { Button } from 'semantic-ui-react';
 import { FieldArray } from 'formik';
 import Icon from '../Icon';

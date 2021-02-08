@@ -2,7 +2,6 @@
  * Source: https://github.com/turner-industries/formik-semantic-ui/blob/master/example/src/custom/DatePicker.js
  */
 
-import React from 'react';
 import { Form } from 'semantic-ui-react';
 import { Field } from 'formik';
 import FormikTimePicker from './TimePicker';
@@ -10,7 +9,7 @@ import Flex from '../layout/Flex';
 
 const FORMAT = 'HH:mm';
 
-const TimeRange = props => {
+const TimeRange = (props) => {
   return (
     <Field name={props.name}>
       {({ form }) => {

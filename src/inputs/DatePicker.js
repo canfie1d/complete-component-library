@@ -1,4 +1,3 @@
-import React from 'react';
 import moment from 'moment';
 import { Field } from 'formik';
 import DatePicker from 'react-datepicker';

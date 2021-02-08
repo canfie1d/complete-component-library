@@ -1,16 +1,11 @@
-/**
- * Main navigation menu component for the app
- * Triggered by the hamburger icon in the header
- */
-
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { Menu, Button } from 'semantic-ui-react';
 import { useClickAway } from 'react-use';
 import { useMediaQuery } from '../hooks/useMediaQuery';
 
-const MenuNav = props => {
+const MenuNav = (props) => {
   const mediaQuery = useMediaQuery();
   const isSmallScreen =
     mediaQuery === 'xSmall' ||

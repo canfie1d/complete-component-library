@@ -1,7 +1,3 @@
-/**
- * This hook is used for all mapbox requests.
- */
-
 import { useState, useEffect } from 'react';
 import { geocodingService } from '../services/mapbox';
 import { useDebounce } from './util';
@@ -36,7 +32,7 @@ export default (initalQuery = '', types = ['postcode', 'address', 'poi']) => {
     })();
   }, [debouncedQuery]); //eslint-disable-line
 
-  const setQuery = raw => {
+  const setQuery = (raw) => {
     setLoading(true);
     setRawQuery(raw);
   };

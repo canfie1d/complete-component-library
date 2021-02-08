@@ -1,19 +1,19 @@
 {
-  "name": "transition-switch",
+  "name": "complete-component-library",
   "version": "1.0.0",
   "license": "MIT",
   "main": "lib/index.js",
-  "description": "React Router 5 Switch Replacement that adds animations and scroll to top.",
+  "description": "A collection of elements that can ba assembled to complete most user interfaces.",
   "repository": {
     "type": "git",
-    "url": "http://github.com/canfie1d/transition-switch"
+    "url": "http://github.com/canfie1d/complete-component-library"
   },
   "bugs": {
-    "url": "https://github.com/canfie1d/transition-switch/issues"
+    "url": "https://github.com/canfie1d/complete-component-library/issues"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.10",
-    "@babel/preset-env": "^7.12.11",
+    "@babel/core": "^7.12.13",
+    "@babel/preset-env": "^7.12.13",
     "babel-preset-react-app": "^10.0.0",
     "babel-loader": "8.1.0",
     "copy-webpack-plugin": "^6.2.1",
@@ -27,10 +27,22 @@
     "react-router-dom": "^5.2.0"
   },
   "dependencies": {
-    "animated": "^0.2.2",
     "prop-types": "^15.7.2",
-    "react-transition-group": "^4.4.1",
-    "react-use": "^15.3.8"
+    "@mapbox/mapbox-sdk": "^0.12.1",
+    "@turf/along": "^6.3.0",
+    "@turf/bbox": "^6.3.0",
+    "@turf/length": "^6.3.0",
+    "axios": "^0.21.1",
+    "axios-hooks": "^2.3.0",
+    "fw-semantic-ui-scss": "^2.4.1-beta.7",
+    "moment": "^2.29.1",
+    "rc-time-picker": "^3.7.3",
+    "react-datepicker": "^3.4.1",
+    "react-dropzone": "^11.3.0",
+    "react-error-boundary": "^3.1.0",
+    "react-use": "^17.1.0",
+    "classnames": "2.2.6",
+    "react-map-gl": "6.1.5"
   },
   "scripts": {
     "build": "webpack --config webpack.config.js"

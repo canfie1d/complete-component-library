@@ -1,10 +1,4 @@
-/**
- * A simple component that creates a stylized hr
- */
-
-import React from 'react';
-
-const Divider = props => {
+const Divider = (props) => {
   let styles = {
     display: props.display,
     height: props.height,

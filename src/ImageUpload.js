@@ -1,9 +1,4 @@
-/**
- * Component that holds all uploading logic for images and displays the uploaded image as well
- * Also allows user to view a larger version of the image in a popup modal
- */
-
-import React, { useContext, useState, useEffect } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { Image, Popup, Loader, Dimmer } from 'semantic-ui-react';
 import { useAxios, useFormDataAxios } from '../hooks/useAxios';
 import { ModalContext } from '../contexts/ModalStore';
@@ -11,7 +6,7 @@ import FileUpload from './inputs/FileUpload';
 import Flex from './layout/Flex';
 import Icon from './Icon';
 
-const ImageUpload = props => {
+const ImageUpload = (props) => {
   const [state, dispatch] = useContext(ModalContext); // eslint-disable-line
   const [uploading, setUploading] = useState(false);
   const [error, setError] = useState();
@@ -31,7 +26,7 @@ const ImageUpload = props => {
     fetchFile({ url: props.fileUrl });
   }, [props.fileUrl]); // eslint-disable-line
 
-  const handleUpload = file => {
+  const handleUpload = (file) => {
     setUploading(true);
     var formData = new FormData();
     formData.append('file', file);
@@ -105,7 +100,7 @@ const ImageUpload = props => {
   if (!error && response?.data) {
     let mimetype = response.headers['content-type'];
 
-    const encodeImage = arrayBuffer => {
+    const encodeImage = (arrayBuffer) => {
       if (mimetype === 'application/pdf') {
         return URL.createObjectURL(
           new Blob([arrayBuffer], { type: 'application/pdf' })

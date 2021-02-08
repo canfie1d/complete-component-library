@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Input } from 'semantic-ui-react';
 
 const moneyRegEx = new RegExp(/^[0-9]+(\.[0-9]{1,2})?$/);
 
-const MoneyInput = props => {
+const MoneyInput = (props) => {
   const [displayedValue, setDisplayedValue] = useState();
   const [error, setError] = useState();
 
   let classes = 'field';
   if (props.required) classes = classes + ' required';
 
-  const onChange = data => {
+  const onChange = (data) => {
     let isValid = moneyRegEx.test(data.value);
 
     if (data.value === '') {

@@ -1,6 +1,4 @@
-import React from 'react';
-
-const FlexColumn = props => {
+const FlexColumn = (props) => {
   return (
     <div
       className='flex__column'

@@ -1,8 +1,4 @@
-/**
- * The header navigation displayed when on small screen
- */
-
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Menu, Popup } from 'semantic-ui-react';
 import useAuth from '../hooks/useAuth';
@@ -12,12 +8,12 @@ import SubdomainLink from './SubdomainLink';
 import Flex from './layout/Flex';
 import Icon from './Icon';
 
-const MobileNav = props => {
+const MobileNav = (props) => {
   const { loading, isAuthenticated } = useAuth();
   const [navOpen, setNavOpen] = useState(false);
   const [notificationsOpen, setNotificationsOpen] = useState(false);
 
-  const handleNavClick = menu => {
+  const handleNavClick = (menu) => {
     if (menu === 'notifications') {
       setNotificationsOpen(!notificationsOpen);
     } else {

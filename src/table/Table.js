@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from 'react';
+import { useEffect, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { Image, Header, Pagination } from 'semantic-ui-react';
 import Container from '../layout/Container';
@@ -6,7 +6,7 @@ import TruckIcon from '../../assets/icons/TruckIcon';
 import { TableContext } from '../../contexts/TableStore';
 import Flex from '../layout/Flex';
 
-const Table = props => {
+const Table = (props) => {
   const [state, dispatch] = useContext(TableContext); // eslint-disable-line
   const listLength = props.listLength ? props.listLength : state.list?.length;
 
@@ -57,9 +57,10 @@ const Table = props => {
   const childTable = React.cloneElement(props.children, {
     list: paginatedList,
     sort: state.sortType,
-    setActivePage: activePage =>
+    setActivePage: (activePage) =>
       dispatch({ type: 'SET_ACTIVE_PAGE', payload: activePage }),
-    setSort: sortData => dispatch({ type: 'SET_SORT_TYPE', payload: sortData }),
+    setSort: (sortData) =>
+      dispatch({ type: 'SET_SORT_TYPE', payload: sortData }),
   });
 
   return (

@@ -1,11 +1,6 @@
-/**
- * UI for displaying a video via a href within an iframe
- */
-
-import React from 'react';
 import PropTypes from 'prop-types';
 
-const Video = props => {
+const Video = (props) => {
   return (
     <div
       style={{

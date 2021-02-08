@@ -1,8 +1,3 @@
-/**
- * Component used to display a large image at the top of the viewport with a title
- */
-
-import React from 'react';
 import classNames from 'classnames';
 import { Image } from 'semantic-ui-react';
 import Container from './layout/Container';

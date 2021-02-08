@@ -1,9 +1,4 @@
-/**
- * A wrapper around react-router-dom's <Route> component that allows the frontend to catch
- * and redirect unauthenticated users to a fallback url
- */
-
-import React, { useEffect, useContext } from 'react';
+import { useEffect, useContext } from 'react';
 import { Context } from '../contexts/AppStore';
 import { Route, Redirect } from 'react-router-dom';
 import { Loader } from 'semantic-ui-react';

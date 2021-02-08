@@ -1,11 +1,7 @@
-/**
- * Component that takes a starting time and either counts up or down automatically from that time
- */
-
 import { useEffect, useState } from 'react';
 import moment from 'moment';
 
-const Count = props => {
+const Count = (props) => {
   const [age, setAge] = useState();
 
   useEffect(() => {
@@ -25,7 +21,7 @@ const Count = props => {
     return () => clearInterval(interval);
   });
 
-  const formatAge = ageInSecs => {
+  const formatAge = (ageInSecs) => {
     if (Math.abs(ageInSecs) > 86400) {
       return moment(props.startTime).format('l');
     }

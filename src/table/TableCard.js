@@ -1,7 +1,6 @@
-import React from 'react';
 import { Card } from 'semantic-ui-react';
 
-const TableCard = props => {
+const TableCard = (props) => {
   return (
     <div style={props.style}>
       <Card fluid color={props.color}>

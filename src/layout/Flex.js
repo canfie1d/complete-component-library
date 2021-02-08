@@ -1,13 +1,8 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-
 import FlexColumn from './FlexColumn';
 import FlexRow from './FlexRow';
 
-/**
- * A flex row is used to lay out content.
- */
-const Flex = props => {
+const Flex = (props) => {
   return (
     <FlexRow
       style={props.style}

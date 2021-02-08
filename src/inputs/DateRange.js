@@ -1,4 +1,3 @@
-import React from 'react';
 import Flex from '../layout/Flex';
 import { Form } from 'formik-semantic-ui';
 import * as moment from 'moment';

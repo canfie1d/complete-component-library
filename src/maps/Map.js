@@ -1,8 +1,6 @@
-import React from 'react';
-import config from '../../config';
 import ReactMapGL, { FlyToInterpolator } from 'react-map-gl';
 
-const Map = props => {
+const Map = (props) => {
   return (
     <ReactMapGL
       {...props.viewport}
@@ -13,7 +11,7 @@ const Map = props => {
       transitionDuration={150}
       transitionInterpolator={new FlyToInterpolator()}
       onViewportChange={props.onViewportChange}
-      mapboxApiAccessToken={config.mapboxAccessToken}
+      mapboxApiAccessToken={props.mapboxAccessToken}
       onLoad={props.onLoad}
     >
       {props.children}
@@ -22,6 +20,7 @@ const Map = props => {
 };
 
 Map.defaultProps = {
+  mapboxAccessToken: '',
   viewport: {
     latitude: 37.929598, // US off-centered
     longitude: -110.297408,

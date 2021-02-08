@@ -1,12 +1,6 @@
-/**
- * A component that displays a label inline with a piece of text next to it.
- * It also defaults with a bottom border for separation between UI elements
- */
-
-import React from 'react';
 import Flex from './layout/Flex';
 
-const LabelValueTextPair = props => {
+const LabelValueTextPair = (props) => {
   let styles = { fontWeight: 'bold' };
 
   styles = props.noWrap ? { ...styles, ...{ whiteSpace: 'nowrap' } } : styles;

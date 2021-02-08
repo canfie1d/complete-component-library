@@ -1,14 +1,7 @@
-/**
- * Component used to add the ability to link between apps across all
- * developement and production environments
- */
-import React from 'react';
-import config from '../config';
-
-const SubdomainLink = props => {
+const SubdomainLink = (props) => {
   let port = window.location.port;
   const urlBase = () => {
-    switch (config.baseEnv) {
+    switch (props.baseEnv) {
       case 'prod':
         return 'https://myfreightweb.com';
       case 'staging':
@@ -37,6 +30,7 @@ const SubdomainLink = props => {
 };
 
 SubdomainLink.defaultProps = {
+  baseEnv: 'dev',
   target: 'self',
   rel: '',
 };

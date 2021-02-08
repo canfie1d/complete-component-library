@@ -1,13 +1,8 @@
-/**
- * Layout component used to display content in a three column layout
- */
-
-import React from 'react';
 import { Segment, Header } from 'semantic-ui-react';
 import Divider from './Divider';
 import Flex from './layout/Flex';
 
-const ThreeColumnSection = props => {
+const ThreeColumnSection = (props) => {
   const pStyle = {
     maxWidth: '300px',
     margin: 'auto',

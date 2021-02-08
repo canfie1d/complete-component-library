@@ -1,8 +1,3 @@
-/**
- * An instance of Alert that is displayed at a system level to relay timely information to users
- */
-
-import React, { useEffect } from 'react';
 import Alert from './Alert';
 
 const AlertDialog = (props) => {

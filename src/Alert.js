@@ -1,8 +1,3 @@
-/**
- * Component used to display system notifications to users
- */
-
-import React from 'react';
 import Container from './layout/Container';
 import Flex from './layout/Flex';
 import Icon from './Icon';

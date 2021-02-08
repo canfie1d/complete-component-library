@@ -106,12 +106,17 @@
 - react-datepicker
 - react-dropzone
 - rc-time-picker/assets/index.css
+- react-map-gl
+- @turf/bbox
+- @turf/length
+- @turf/along
 
 ## Needed
 
 - Button
 - Input
 - Checkbox
+- Card
 - Dropdown
 - TextArea
 - Image

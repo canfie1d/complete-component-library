@@ -1,7 +1,3 @@
-/**
- * This hook is used to create listeners for media queries to be be used in js code
- */
-
 import { createBreakpoint } from 'react-use';
 
 // CSS Media Queries

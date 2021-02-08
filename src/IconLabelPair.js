@@ -1,13 +1,8 @@
-/**
- * Combines an icon and piece of text so that they can be displayed side-by-side easily
- */
-
-import React from 'react';
 import Flex from './layout/Flex';
 import { Header, Image } from 'semantic-ui-react';
 import Icon from './Icon';
 
-const IconLabelPair = props => {
+const IconLabelPair = (props) => {
   return (
     <>
       <Flex

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import ReactMapGL, { FlyToInterpolator, Marker } from 'react-map-gl';
 import WebMercatorViewport from 'viewport-mercator-project';
 import { useWindowSize } from '../../hooks/util';
@@ -6,7 +6,7 @@ import bbox from '@turf/bbox';
 import config from '../../config';
 import Icon from '../Icon';
 
-const MarkerMap = props => {
+const MarkerMap = (props) => {
   const mapRef = useRef(null);
   const windowSize = useWindowSize(); // refire on window size change
   const [viewport, setViewport] = useState(props.viewport);
@@ -15,7 +15,7 @@ const MarkerMap = props => {
     if (!mapRef || !mapRef.current) return; // unmounted
     if (!props.markers) return;
 
-    let polygonPoints = props.markers.map(point => [point[1], point[0]]);
+    let polygonPoints = props.markers.map((point) => [point[1], point[0]]);
 
     let polygon = {
       type: 'Feature',

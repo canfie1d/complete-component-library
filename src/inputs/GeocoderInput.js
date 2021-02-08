@@ -3,7 +3,7 @@
  * https://geocoding.geo.census.gov/geocoder/Geocoding_Services_API.html
  */
 
-import React, { useState, useMemo, useContext, useEffect } from 'react';
+import { useState, useMemo, useContext, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Button } from 'formik-semantic-ui';
 import { Select, Popup } from 'semantic-ui-react';

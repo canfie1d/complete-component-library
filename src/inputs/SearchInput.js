@@ -1,8 +1,7 @@
-import React from 'react';
 import classNames from 'classnames';
 import { Button, Input } from 'semantic-ui-react';
 
-const SearchInput = props => {
+const SearchInput = (props) => {
   const classes = ['search-input', props.onClick && 'search-input--onClick'];
 
   return (

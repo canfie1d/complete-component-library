@@ -1,8 +1,7 @@
-import React from 'react';
 import EditableField from './EditableField';
 import { Dropdown } from 'semantic-ui-react';
 
-const EditableDropdown = props => {
+const EditableDropdown = (props) => {
   return (
     <EditableField handleSave={props.handleSave}>
       <Dropdown
@@ -16,5 +15,5 @@ const EditableDropdown = props => {
       <p view='view'>{props.text}</p>
     </EditableField>
   );
-}
+};
 export default EditableDropdown;

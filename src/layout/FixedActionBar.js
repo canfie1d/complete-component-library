@@ -1,14 +1,8 @@
-/**
- * A layout component that attaches UI across the bottom of the screen that allows custom UI inside of it
- * Used primarily on AddTripForm.js
- */
-
-import React from 'react';
 import classNames from 'classnames';
 import Container from './layout/Container';
 import Flex from './layout/Flex';
 
-const FixedActionBar = props => {
+const FixedActionBar = (props) => {
   const classes = [
     'fixed-action-bar',
     props.expanded && 'fixed-action-bar--expanded',

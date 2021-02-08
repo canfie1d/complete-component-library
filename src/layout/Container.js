@@ -1,8 +1,7 @@
-import React from 'react';
-import { Segment } from 'semantic-ui-react';
+import Container from '../layout/Container';
 import { useMediaQuery } from '../../hooks/useMediaQuery';
 
-const Container = props => {
+const Container = (props) => {
   const mediaQuery = useMediaQuery();
   const isSmallScreen = mediaQuery === 'xSmall' || mediaQuery === 'small';
 
@@ -19,14 +18,15 @@ const Container = props => {
 
   if (props.asSegment || props.placeholder) {
     return (
-      <Segment
+      <Container
+        asSegment
         className={props.className}
         placeholder={props.placeholder}
         style={style}
         basic={props.basic}
       >
         {props.children}
-      </Segment>
+      </Container>
     );
   }
 

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import ReactMapGL, {
   WebMercatorViewport,
   FlyToInterpolator,
@@ -14,7 +14,7 @@ import Icon from '../Icon';
 import { useWindowSize } from '../../hooks/util';
 import { useAxios } from '../../hooks/useAxios';
 
-const RouteMap = props => {
+const RouteMap = (props) => {
   const mapRef = useRef(null);
   const windowSize = useWindowSize(); // refire on window size change
   const [viewport, setViewport] = useState({
@@ -38,14 +38,14 @@ const RouteMap = props => {
       setIsPainted(false);
       setRouteGeoJson({ type: 'LineString', coordinates: [] });
       const directions = props.coordinates
-        .map(coord => {
+        .map((coord) => {
           return `${coord[1]},${coord[0]}`;
         })
         .join('%3B');
       const directionsUrl = `/v1/quoted/directions?stops=${directions}`;
       mapApi({
         url: directionsUrl,
-      }).then(res => {
+      }).then((res) => {
         if (res === undefined) return;
         // let coords = res.data.routes[0].geometry.coordinates;
         let coords = res.data;
@@ -172,7 +172,7 @@ const RouteMap = props => {
     if (!props.coordinates.length) return;
 
     const driverLocationOriginDest = props.coordinates.some(
-      coord =>
+      (coord) =>
         props.driverLocation?.latitude === coord[0] &&
         props.driverLocation?.longitude === coord[1]
     );
