@@ -1,12 +1,6 @@
-/**
- * Similar to SubdomainLink, this component allows redirects across all
- * developement and production environments
- */
-import config from '../config';
-
-const SubdomainRedirect = props => {
+const SubdomainRedirect = (props) => {
   const urlBase = () => {
-    switch (config.baseEnv) {
+    switch (props.baseEnv) {
       case 'prod':
         return `https://${props.subdomain}.myfreightweb.com`;
       case 'staging':
@@ -23,6 +17,7 @@ const SubdomainRedirect = props => {
 };
 
 SubdomainRedirect.defaultProps = {
+  baseEnv: 'dev',
   port: '3001',
   subdomain: 'driver',
 };

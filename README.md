@@ -1,12 +1,8 @@
 # Complete Component Library
 
-## Included
+## Edit Fields
 
-### Form Inputs
-
-#### EDIT FIELDS
-
-##### Static value with an edit mode
+#### Static value with an edit mode
 
 - Checkbox
 - DateTime
@@ -15,13 +11,13 @@
 - List
 - TextArea
 
-#### INPUTS
+## Inputs
 
 - Time Picker
 - Time Range
-- DatePicker
-- DateRange
-- DateTimePicker
+- Date Picker
+- Date Range
+- Date Time Picker
 - File Upload
 - Geocoder
 - Money
@@ -32,7 +28,7 @@
 - Search
 - Input Array
 
-### Layout
+## Layout
 
 - Container
 - Fixed Action Bar
@@ -41,20 +37,20 @@
   - Flex Column
 - Three Column Section
 
-### Map
+## Map
 
 - Map
 - Marker Map
 - Route Map
 
-### Table
+## Table
 
 - Table
 - Table Card
 - Table Filter
 - Table HeaderCell
 
-### Components
+## Components
 
 - Alert
 - AlertDialog
@@ -65,14 +61,14 @@
 - Hero
 - Icon
 - Icon Label Pair
-- ImageUpload
+- Image Upload
 - Menu Nav
 - Mobile Nav
 - Nav
 - Video
 - View Switcher
 
-### Other
+## Other
 
 - Private Route
 - Permissions
@@ -82,13 +78,13 @@
 - Subdomain Link
 - Subdomain Redirect
 
-### Hooks
+## Hooks
 
 - useAxios
 - useGeocoder
 - useMediaQuery
 
-### Util Functions
+## Utility Functions
 
 - phoneNumberRegEx
 - postalCodeRegEx
@@ -98,8 +94,30 @@
 - sortList
 - capitalize
 
+## Dependencies
+
+- react-ga
+- react-router-dom
+- moment
+- classNames
+- prop-types
+- react-use
+- rc-time-picker
+- react-datepicker
+- react-dropzone
+- rc-time-picker/assets/index.css
+
 ## Needed
 
 - Button
 - Input
--
+- Checkbox
+- Dropdown
+- TextArea
+- Image
+- Menu
+- Header
+- Popup
+- Loader
+- Dimmer
+- Select

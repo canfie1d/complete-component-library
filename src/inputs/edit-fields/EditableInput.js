@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Input } from 'semantic-ui-react';
+import { toMoneyString } from '../../util/util';
 import EditableField from './EditableField';
 import MoneyInput from '../MoneyInput';
-import { toMoneyString } from '../../../services/util';
 import Flex from '../../layout/Flex';
 
-const EditableInput = props => {
+const EditableInput = (props) => {
   const [newValue, setNewValue] = useState('');
 
   useEffect(() => {
@@ -61,17 +61,17 @@ const EditableInput = props => {
           labelText={props.label}
           size='mini'
           value={newValue[key]}
-          onChange={money => {
+          onChange={(money) => {
             setNewValue({ ...newValue, ...{ [key]: money } });
           }}
         />
       ) : (
         <Input
           key={`input-${i}`}
-          onFocus={e => e.stopPropagation()}
-          onClick={e => e.stopPropagation()}
+          onFocus={(e) => e.stopPropagation()}
+          onClick={(e) => e.stopPropagation()}
           value={newValue[key]}
-          onChange={e => {
+          onChange={(e) => {
             e.stopPropagation();
             setNewValue({ ...newValue, ...{ [key]: e.target.value } });
           }}
@@ -108,10 +108,10 @@ const EditableInput = props => {
       <Input
         view='edit'
         fluid
-        onFocus={e => e.stopPropagation()}
-        onClick={e => e.stopPropagation()}
+        onFocus={(e) => e.stopPropagation()}
+        onClick={(e) => e.stopPropagation()}
         value={newValue}
-        onChange={e => {
+        onChange={(e) => {
           e.stopPropagation();
           setNewValue(e.target.value);
         }}

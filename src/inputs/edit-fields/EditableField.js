@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState } from 'react';
 import classNames from 'classnames';
 import { Button } from 'semantic-ui-react';
 import Flex from '../../layout/Flex';

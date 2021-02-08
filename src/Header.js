@@ -4,7 +4,8 @@
 
 import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { Menu, Container, Image } from 'semantic-ui-react';
+import { Menu, Image } from 'semantic-ui-react';
+import Container from './layout/Container';
 import Nav from './Nav';
 import MobileNav from './MobileNav';
 
@@ -13,7 +14,7 @@ import smallFwLogoSvg from '../assets/svg/FW-icon-color.svg';
 import { useMediaQuery } from '../hooks/useMediaQuery';
 import { Context } from '../contexts/AppStore';
 
-const Header = props => {
+const Header = (props) => {
   const [state] = useContext(Context); // eslint-disable-line
 
   const mediaQuery = useMediaQuery();

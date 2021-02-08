@@ -1,14 +1,14 @@
 import React from 'react';
+import moment from 'moment';
 import { Field } from 'formik';
 import DatePicker from 'react-datepicker';
 import { Input } from 'semantic-ui-react';
-import moment from 'moment';
 import Flex from '../layout/Flex';
 
 // DatePicker DOCS https://reactdatepicker.com/
 
-const FormikDatePicker = props => {
-  const handleDayChange = day => {
+const FormikDatePicker = (props) => {
+  const handleDayChange = (day) => {
     if (day === null) {
       props.formikProps.setFieldValue(props.name, props.clearValue, true);
     } else {
@@ -29,7 +29,7 @@ const FormikDatePicker = props => {
             <DatePicker
               id={props.id}
               selected={field.value ? moment(field.value).toDate() : null}
-              onChange={day => handleDayChange(day)}
+              onChange={(day) => handleDayChange(day)}
               minDate={props.minDate?.toDate()}
               customInput={<Input icon='calendar' style={{ marginRight: 0 }} />}
               isClearable={props.isClearable}

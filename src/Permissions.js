@@ -9,7 +9,6 @@ import { usePrevious } from 'react-use';
 import { useAxios } from '../hooks/useAxios';
 import { Context } from '../contexts/AppStore';
 import { useAuth0 } from '../services/auth';
-import { redirectToDriverHub } from '../services/util';
 
 export const Permissions = () => {
   const { loading: authLoading, isAuthenticated } = useAuth0();
@@ -29,11 +28,8 @@ export const Permissions = () => {
       location.pathname !== '/available-loads' &&
       location.pathname !== '/survey/:auctionId'
     ) {
-      userApi().then(res => {
+      userApi().then((res) => {
         const user = res.data?.user;
-        if (user.isDriverAccount) {
-          redirectToDriverHub();
-        }
         if (user) {
           dispatch({ type: 'SET_USER', payload: user });
         }
@@ -46,11 +42,11 @@ export const Permissions = () => {
   useEffect(() => {
     if (isAuthenticated && !state.user.id) {
       userApi()
-        .then(res => {
+        .then((res) => {
           const user = res.data?.user;
           dispatch({ type: 'SET_USER', payload: user });
         })
-        .catch(err => {
+        .catch((err) => {
           /*Silent Error*/
         });
     }

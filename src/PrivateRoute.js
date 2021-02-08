@@ -4,7 +4,6 @@
  */
 
 import React, { useEffect, useContext } from 'react';
-import { ModalContext } from '../contexts/ModalStore';
 import { Context } from '../contexts/AppStore';
 import { Route, Redirect } from 'react-router-dom';
 import { Loader } from 'semantic-ui-react';
@@ -13,6 +12,7 @@ import { useAuth0 } from '../services/auth';
 const PrivateRoute = ({
   exact,
   path,
+  permissions,
   fallbackRedirect,
   component: Component,
 }) => {
@@ -21,7 +21,6 @@ const PrivateRoute = ({
     isAuthenticated,
     loginWithRedirect,
   } = useAuth0();
-  const [state, dispatch] = useContext(ModalContext); // eslint-disable-line
   const [appState] = useContext(Context);
 
   useEffect(() => {
@@ -35,7 +34,7 @@ const PrivateRoute = ({
   }, [authLoading, isAuthenticated, fallbackRedirect]); //eslint-disable-line
 
   if (
-    (!appState.permissions && isAuthenticated) ||
+    (!permissions && isAuthenticated) ||
     authLoading ||
     (!fallbackRedirect && !isAuthenticated)
   ) {
@@ -54,7 +53,7 @@ const PrivateRoute = ({
     <Route
       exact={exact}
       path={path}
-      render={props =>
+      render={(props) =>
         !isAuthenticated && fallbackRedirect ? (
           <Redirect to={fallbackRedirect} />
         ) : (

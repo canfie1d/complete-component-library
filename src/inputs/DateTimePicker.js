@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
+import moment from 'moment';
 import { Checkbox } from 'semantic-ui-react';
 import Flex from '../layout/Flex';
 import DatePicker from '../inputs/DatePicker';
 import TimePicker from '../inputs/TimePicker';
-import moment from 'moment';
 
 const TIME_PICKER_FORMAT = 'HH:mm';
 
-const DateTimePicker = props => {
+const DateTimePicker = (props) => {
   const [timeVisible, setTimeVisible] = useState(false);
 
   return (
@@ -25,7 +25,7 @@ const DateTimePicker = props => {
           formikProps={props.formikProps}
           minDate={props.minDate}
           inputProps={{
-            isOutsideRange: day =>
+            isOutsideRange: (day) =>
               moment(day).isBefore(moment().startOf('day')),
           }}
           fieldProps={{ required: true }}
