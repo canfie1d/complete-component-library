@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Input } from 'semantic-ui-react';
+import Input from '../Input';
 import { toMoneyString } from '../../util/util';
 import EditableField from './EditableField';
 import MoneyInput from '../MoneyInput';
@@ -58,7 +58,7 @@ const EditableInput = (props) => {
       props.type === 'money' && i === 0 ? (
         <MoneyInput
           key={`input-${i}`}
-          labelText={props.label}
+          label={props.label}
           size='mini'
           value={newValue[key]}
           onChange={(money) => {
@@ -68,6 +68,9 @@ const EditableInput = (props) => {
       ) : (
         <Input
           key={`input-${i}`}
+          id={props.id}
+          label={props.label}
+          labelClassName={props.labelClassName}
           onFocus={(e) => e.stopPropagation()}
           onClick={(e) => e.stopPropagation()}
           value={newValue[key]}

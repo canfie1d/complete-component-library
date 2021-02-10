@@ -1,11 +1,11 @@
 import classNames from 'classnames';
-import { Image } from 'semantic-ui-react';
+import Image from './Image';
 import Container from './layout/Container';
-import { useMediaQuery } from '../hooks/useMediaQuery';
+import { useMediaQuery } from './util/useMediaQuery';
 import Divider from './Divider';
 import Flex from './layout/Flex';
 
-const Hero = (props) => {
+const Hero = props => {
   const mediaQuery = useMediaQuery();
   const isMobile = mediaQuery === 'xSmall' || mediaQuery === 'small';
 

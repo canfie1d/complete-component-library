@@ -1,35 +1,20 @@
 import { useEffect } from 'react';
-import { useUnauthenticatedAxios, useAxios } from './hooks/useAxios';
 import { useHistory, useLocation } from 'react-router-dom';
-import Hero from './components/Hero';
-import { Image } from 'semantic-ui-react';
-import Button from './components/Button';
-import Container from './components/layout/Container';
-import Flex from './components/layout/Flex';
-import Image1 from './assets/svg/illustrations/stacked-logos.svg';
+import Hero from './Hero';
+import Image from './Image';
+import Button from './Button';
+import Container from './layout/Container';
+import Flex from './layout/Flex';
 
-const ErrorFallback = (props) => {
+const ErrorFallback = props => {
   const history = useHistory();
   const location = useLocation();
-  // eslint-disable-next-line
-  const [{}, errorApi] = useUnauthenticatedAxios(
-    { url: `/v1/quoted/logs`, method: 'post' },
-    { manual: true }
-  );
-  const [{ loading: userLoading, data: userData }] = useAxios(`/v1/userd/user`);
 
   useEffect(() => {
-    if (!userLoading) {
-      errorApi({
-        data: {
-          error: props.error.message,
-          errorLocation: location.pathname,
-          accountId: userData?.user ? userData?.user.accountId : 'n/a',
-          userId: userData?.user ? userData?.user.id : 'n/a',
-        },
-      });
+    if (!loading) {
+      props.handleError();
     }
-  }, [userLoading]); //eslint-disable-line
+  }, [loading]); //eslint-disable-line
 
   return (
     <>
@@ -50,9 +35,7 @@ const ErrorFallback = (props) => {
               </Button>
             </Container>
           </Flex.Column>
-          <Flex.Column style={{ zIndex: 0 }}>
-            <Image centered size='medium' src={Image1} />
-          </Flex.Column>
+          <Flex.Column style={{ zIndex: 0 }}>{props.children}</Flex.Column>
         </Flex>
       </Container>
     </>

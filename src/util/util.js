@@ -8,7 +8,7 @@ export const toMoneyString = (money, divideBy100 = true) => {
   return `$${moneyString}`;
 };
 
-export const convertMilitaryTime = (time) => {
+export const convertMilitaryTime = time => {
   if (time === null) return;
   const { h, m } = time;
 
@@ -28,7 +28,7 @@ export const convertMilitaryTime = (time) => {
   }
 };
 
-export const formatPhoneNumber = (number) => {
+export const formatPhoneNumber = number => {
   if (number.match(/[^\d]/)) return number;
   if (number === '') return;
   const match = number.match(/^(\d{3})?(\d{3})?(\d{4})?/);
@@ -63,10 +63,10 @@ export const sortList = (sortType, filteredList) => {
   }
 };
 
-export const capitalize = (string) => {
+export const capitalize = string => {
   if (typeof string !== 'string') return '';
   return string
     .split(' ')
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
     .join(' ');
 };

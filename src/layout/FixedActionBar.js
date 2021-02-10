@@ -1,8 +1,8 @@
 import classNames from 'classnames';
-import Container from './layout/Container';
-import Flex from './layout/Flex';
+import Container from './Container';
+import Flex from './Flex';
 
-const FixedActionBar = (props) => {
+const FixedActionBar = props => {
   const classes = [
     'fixed-action-bar',
     props.expanded && 'fixed-action-bar--expanded',

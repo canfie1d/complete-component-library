@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
-import { Checkbox } from 'semantic-ui-react';
 import EditableField from './EditableField';
+import Checkbox from '../Checkbox';
 import Icon from '../../Icon';
 
-const EditableCheckbox = (props) => {
+const EditableCheckbox = props => {
   const [checked, setChecked] = useState(false);
 
   useEffect(() => {
@@ -22,8 +22,8 @@ const EditableCheckbox = (props) => {
           e.stopPropagation();
           setChecked(data.checked);
         }}
-        onFocus={(e) => e.stopPropagation()}
-        onClick={(e) => e.stopPropagation()}
+        onFocus={e => e.stopPropagation()}
+        onClick={e => e.stopPropagation()}
       />
       <p view='view'>{props.checked && <Icon name='check' />}</p>
     </EditableField>

@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import { Input } from 'semantic-ui-react';
+import Input from './Input';
 import Button from '../Button';
 
 const SearchInput = (props) => {
@@ -7,16 +7,10 @@ const SearchInput = (props) => {
 
   return (
     <>
-      {props.label && (
-        <label
-          htmlFor='search'
-          style={{ display: 'block', marginBottom: '0.28571429rem' }}
-        >
-          {props.label}
-        </label>
-      )}
       <Input
         id='search'
+        label={props.label}
+        labelClassName={props.labelClassName}
         className={classNames(classes)}
         style={props.style}
         size={props.size}

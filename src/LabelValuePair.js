@@ -1,6 +1,6 @@
 import Flex from './layout/Flex';
 
-const LabelValueTextPair = (props) => {
+const LabelValuePair = props => {
   let styles = { fontWeight: 'bold' };
 
   styles = props.noWrap ? { ...styles, ...{ whiteSpace: 'nowrap' } } : styles;
@@ -27,9 +27,9 @@ const LabelValueTextPair = (props) => {
   );
 };
 
-LabelValueTextPair.defaultProps = {
+LabelValuePair.defaultProps = {
   leftColumnBasis: '120px',
   padding: '.5em',
 };
 
-export default LabelValueTextPair;
+export default LabelValuePair;

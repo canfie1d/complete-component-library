@@ -1,24 +1,22 @@
 import { PropTypes } from 'prop-types';
 
-const RadioButton = (props) => {
+const RadioButton = props => {
   return (
     <span className='radio-button-wrapper'>
       <input
-        id={this.props.id}
+        id={props.id}
         type='radio'
-        value={this.props.value}
+        value={props.value}
         className='radio-button visually-hidden'
-        checked={this.props.checked}
-        onChange={this.props.onChange}
-        onBlur={this.props.onBlur}
-        onFocus={this.props.onFocus}
-        required={this.props.required ? true : false}
+        checked={props.checked}
+        onChange={props.onChange}
+        onBlur={props.onBlur}
+        onFocus={props.onFocus}
+        required={props.required ? true : false}
       />
-      <label className='radio-button__label' htmlFor={this.props.id}>
+      <label className='radio-button__label' htmlFor={props.id}>
         <span className='radio-button__custom-box'>
-          <span className='radio-button__label__text'>
-            {this.props.labelText}
-          </span>
+          <span className='radio-button__label__text'>{props.labelText}</span>
         </span>
       </label>
     </span>

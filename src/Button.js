@@ -64,4 +64,4 @@ Button.defaultProps = {
   disabled: false,
 };
 
-export const Button;
+export default Button;

@@ -1,40 +1,19 @@
-import { useContext, useState, useEffect } from 'react';
-import { Image, Popup, Loader, Dimmer } from 'semantic-ui-react';
-import { useAxios, useFormDataAxios } from '../hooks/useAxios';
-import { ModalContext } from '../contexts/ModalStore';
+import { useState } from 'react';
 import FileUpload from './inputs/FileUpload';
 import Flex from './layout/Flex';
+import Image from './Image';
 import Icon from './Icon';
+import Loader from './Loader';
 
-const ImageUpload = (props) => {
-  const [state, dispatch] = useContext(ModalContext); // eslint-disable-line
+const ImageUpload = props => {
   const [uploading, setUploading] = useState(false);
   const [error, setError] = useState();
 
-  const [{ loading, response }, fetchFile] = useAxios(
-    { responseType: 'arraybuffer' },
-    { manual: true }
-  );
-
-  // eslint-disable-next-line
-  const [{}, fileUploadApi] = useFormDataAxios(
-    { method: 'post', crossdomain: true },
-    { manual: true }
-  );
-
-  useEffect(() => {
-    fetchFile({ url: props.fileUrl });
-  }, [props.fileUrl]); // eslint-disable-line
-
-  const handleUpload = (file) => {
+  const handleUpload = file => {
     setUploading(true);
     var formData = new FormData();
     formData.append('file', file);
-
-    fileUploadApi({ url: props.fileUploadUrl, data: formData }).then(() => {
-      setUploading(false);
-      fetchFile({ url: props.fileUrl });
-    });
+    props.handleFileUpload(formData);
   };
 
   if (loading || uploading) {
@@ -49,13 +28,12 @@ const ImageUpload = (props) => {
           overflow: 'hidden',
         }}
       >
-        <Dimmer inverted active>
-          <Loader
-            active
-            size='small'
-            content={uploading ? 'Uploading...' : 'Loading...'}
-          />
-        </Dimmer>
+        <Loader
+          dimmed
+          active
+          size='small'
+          content={uploading ? 'Uploading...' : 'Loading...'}
+        />
       </div>
     );
   }
@@ -75,17 +53,16 @@ const ImageUpload = (props) => {
           overflow: 'hidden',
         }}
       >
-        <Dimmer inverted active>
-          <Loader
-            active
-            size='small'
-            content={
-              error.code === 'file-too-large'
-                ? 'File must be less than 20MB.'
-                : error.message
-            }
-          />
-        </Dimmer>
+        <Loader
+          dimmed
+          active
+          size='small'
+          content={
+            error.code === 'file-too-large'
+              ? 'File must be less than 20MB.'
+              : error.message
+          }
+        />
       </div>
     );
   }
@@ -100,7 +77,7 @@ const ImageUpload = (props) => {
   if (!error && response?.data) {
     let mimetype = response.headers['content-type'];
 
-    const encodeImage = (arrayBuffer) => {
+    const encodeImage = arrayBuffer => {
       if (mimetype === 'application/pdf') {
         return URL.createObjectURL(
           new Blob([arrayBuffer], { type: 'application/pdf' })
@@ -159,7 +136,7 @@ const ImageUpload = (props) => {
               minHeight: '100%',
               objectFit: 'cover',
             }}
-            src={data}
+            src={props.fileUrl}
             fluid
           />
         )}
@@ -174,36 +151,24 @@ const ImageUpload = (props) => {
           }}
         >
           <Flex direction='row-reverse'>
-            <Popup
-              position='bottom right'
-              content={<p>Replace document</p>}
-              trigger={
-                <div>
-                  <FileUpload
-                    loading={loading}
-                    style={{ cursor: 'pointer', padding: '0.5em 0.75em' }}
-                    handleError={setError}
-                    handleUpload={handleUpload}
-                  >
-                    <span className='visually-hidden'>Replace document</span>
-                    <Icon name='upload' color='blue' fitted />
-                  </FileUpload>
-                </div>
-              }
-            />
-            <Popup
-              position='bottom right'
-              content={<p>View document</p>}
-              trigger={
-                <button
-                  className='button--transparent'
-                  onClick={() => setImageModalActive(data, mimetype)}
-                >
-                  <span className='visually-hidden'>View document</span>
-                  <Icon name='eye' color='blue' fitted />
-                </button>
-              }
-            />
+            <div>
+              <FileUpload
+                loading={loading}
+                style={{ cursor: 'pointer', padding: '0.5em 0.75em' }}
+                handleError={setError}
+                handleUpload={handleUpload}
+              >
+                <span className='visually-hidden'>Replace document</span>
+                <Icon name='upload' color='blue' fitted />
+              </FileUpload>
+            </div>
+            <button
+              className='button--transparent'
+              onClick={() => setImageModalActive(data, mimetype)}
+            >
+              <span className='visually-hidden'>View document</span>
+              <Icon name='eye' color='blue' fitted />
+            </button>
             {props.children}
           </Flex>
         </div>

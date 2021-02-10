@@ -1,17 +1,11 @@
-import { useContext, useState } from 'react';
-import { Form } from 'formik-semantic-ui';
+import { useState } from 'react';
+import PropTypes from 'prop-types';
 import Flex from '../layout/Flex';
 import SearchInput from '../inputs/SearchInput';
-import { TableContext } from '../../contexts/TableStore';
-import { Header } from 'semantic-ui-react';
+import Header from '../Header';
 
-const TableFilter = (props) => {
-  const [state, dispatch] = useContext(TableContext); // eslint-disable-line
-  const [filterText, setFilterText] = useState(
-    props.filterText ? props.filterText : ''
-  );
-  const [timeout, setTimeoutState] = useState(null);
-  const listLength = props.listLength ? props.listLength : state.list.length;
+const TableFilter = props => {
+  const [filterText, setFilterText] = useState(props.filterText);
 
   return (
     <Flex
@@ -22,61 +16,40 @@ const TableFilter = (props) => {
     >
       <Flex.Column>
         <Header as='h2' style={{ margin: 0 }}>
-          {props.formatHeader
-            ? `${listLength.toLocaleString('en')} ${props.headerText}${
-                listLength !== 1 ? 's' : ''
-              }`
-            : props.headerText}
+          {props.headerText}
           {props.subHeader}
         </Header>
       </Flex.Column>
       {props.children && <Flex.Column grow={0}>{props.children}</Flex.Column>}
       <Flex.Column grow={0}>
-        <Form
-          render={() => (
-            <SearchInput
-              value={props.backendFilter ? filterText : state.filterText}
-              onClear={() => {
-                if (props.backendFilter) {
-                  // clear on backend
-                  setFilterText('');
-                  props.handleFilterSearch('');
-                } else {
-                  dispatch({ type: 'SET_FILTER_TEXT', payload: '' });
-                }
-              }}
-              onChange={(e) => {
-                if (props.backendFilter) {
-                  setFilterText(e.target.value);
-                  // have a wait period of 1 second then search the backend
-                  clearTimeout(timeout);
-                  let searchValue = e.target.value;
-                  setTimeoutState(
-                    setTimeout(function () {
-                      props.handleFilterSearch(searchValue);
-                    }, 1000)
-                  );
-                } else {
-                  dispatch({
-                    type: 'SET_FILTER_TEXT',
-                    payload: e.target.value,
-                  });
-                }
-              }}
-              placeholder='Filter Items...'
-            />
-          )}
+        <SearchInput
+          value={filterText}
+          onClear={() => {
+            setFilterText('');
+            props.onClear();
+            props.onFilterClear();
+          }}
+          onChange={e => {
+            setFilterText(e.target.value);
+            props.onFilterChange(e.target.value);
+          }}
+          placeholder={props.placeholder}
         />
       </Flex.Column>
-      {props.headerActions && (
-        <Flex.Column grow={0}>{props.headerActions}</Flex.Column>
-      )}
+      {props.actions && <Flex.Column grow={0}>{props.actions}</Flex.Column>}
     </Flex>
   );
 };
 
 TableFilter.defaultProps = {
   formatHeader: true,
+  placeholder: 'Filter Items...',
+  filterText: '',
+};
+
+TableFilter.propTypes = {
+  onFilterClear: PropTypes.func,
+  onFilterChange: PropTypes.func,
 };
 
 export default TableFilter;

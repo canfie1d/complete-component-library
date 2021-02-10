@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { TextArea } from 'semantic-ui-react';
+import TextArea from '../TextArea';
 import EditableField from './EditableField';
 
 const EditableTextArea = (props) => {

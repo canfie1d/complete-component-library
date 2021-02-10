@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import moment from 'moment';
-import { Input, Checkbox } from 'semantic-ui-react';
+import Input from '../Input';
+import Checkbox from '../Checkbox';
 import Flex from '../../layout/Flex';
 import TimePicker from 'rc-time-picker';
 import DatePicker from 'react-datepicker';
@@ -54,7 +55,15 @@ const EditableDateTime = (props) => {
               maxDate={
                 props.maxDate !== null ? props.maxDate.toDate() : props.maxDate
               }
-              customInput={<Input icon='calendar' />}
+              customInput={
+                <Input
+                  id={props.id}
+                  label={props.label}
+                  labelClassName={props.labelClassName}
+                  className={props.inputClassName}
+                  icon='calendar'
+                />
+              }
             />
           </div>
           {!props.hideTimeField && timeVisible && (

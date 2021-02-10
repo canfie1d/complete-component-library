@@ -1,16 +1,18 @@
-import { Segment, Header } from 'semantic-ui-react';
-import Divider from './Divider';
-import Flex from './layout/Flex';
+import Header from './Header';
+import Container from './Container';
+import Divider from '../Divider';
+import Flex from './Flex';
 
-const ThreeColumnSection = (props) => {
+const ThreeColumnSection = props => {
   const pStyle = {
     maxWidth: '300px',
     margin: 'auto',
   };
 
   return (
-    <Segment
+    <Container
       style={{ padding: '1em 1em 4em', background: 'white', margin: 0 }}
+      asSegment
       placeholder
       basic
     >
@@ -45,7 +47,7 @@ const ThreeColumnSection = (props) => {
           <p style={pStyle}>{props.columnThree.text}</p>
         </Flex.Column>
       </Flex>
-    </Segment>
+    </Container>
   );
 };
 

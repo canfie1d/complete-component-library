@@ -19,7 +19,6 @@
 - Date Range
 - Date Time Picker
 - File Upload
-- Geocoder
 - Money
 - Formatted Number
 - Phone Number
@@ -36,6 +35,8 @@
   - Flex Row
   - Flex Column
 - Three Column Section
+- Header
+- Footer
 
 ## Map
 
@@ -54,8 +55,6 @@
 
 - Alert
 - AlertDialog
-- Header
-- Footer
 - Count
 - Divider
 - Hero
@@ -67,22 +66,18 @@
 - Nav
 - Video
 - View Switcher
+- Button
+- Input
+- Checkbox
+- Image
+- Header
 
 ## Other
 
 - Private Route
-- Permissions
 - Analytics Listener
 - Error Boundary
 - Error Fallback
-- Subdomain Link
-- Subdomain Redirect
-
-## Hooks
-
-- useAxios
-- useGeocoder
-- useMediaQuery
 
 ## Utility Functions
 
@@ -105,24 +100,10 @@
 - rc-time-picker
 - react-datepicker
 - react-dropzone
+- react-popper
 - rc-time-picker/assets/index.css
-- react-map-gl
-- @turf/bbox
-- @turf/length
-- @turf/along
 
 ## Needed
 
-- Button
-- Input
-- Checkbox
 - Card
-- Dropdown
-- TextArea
-- Image
-- Menu
-- Header
-- Popup
-- Loader
-- Dimmer
-- Select
+- Label

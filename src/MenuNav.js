@@ -1,12 +1,11 @@
 import { useRef } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import { Menu } from 'semantic-ui-react';
 import { useClickAway } from 'react-use';
-import { useMediaQuery } from '../hooks/useMediaQuery';
+import { useMediaQuery } from './util/useMediaQuery';
 import Button from './Button';
 
-const MenuNav = (props) => {
+const MenuNav = props => {
   const mediaQuery = useMediaQuery();
   const isSmallScreen =
     mediaQuery === 'xSmall' ||
@@ -31,13 +30,9 @@ const MenuNav = (props) => {
         className='menu-nav__button'
         onClick={props.setNavOpen}
       />
-      <Menu.Menu
-        vertical='true'
-        secondary='true'
-        className={classNames(classes)}
-      >
-        <div className='menu-nav__content'>{props.children}</div>
-      </Menu.Menu>
+      <div className={classNames(classes)}>
+        <ul className='menu-nav__content'>{props.children}</ul>
+      </div>
     </div>
   );
 };

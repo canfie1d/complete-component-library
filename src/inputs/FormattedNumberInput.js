@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Input } from 'semantic-ui-react';
+import Input from './Input';
 
 const FormattedNumberInput = (props) => {
   const [displayValue, setDisplayValue] = useState(

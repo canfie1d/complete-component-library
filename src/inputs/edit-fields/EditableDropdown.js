@@ -1,5 +1,5 @@
 import EditableField from './EditableField';
-import { Dropdown } from 'semantic-ui-react';
+import Dropdown from '../Dropdown';
 
 const EditableDropdown = (props) => {
   return (

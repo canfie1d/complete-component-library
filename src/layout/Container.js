@@ -1,7 +1,6 @@
-import Container from '../layout/Container';
-import { useMediaQuery } from '../../hooks/useMediaQuery';
+import { useMediaQuery } from '../util/useMediaQuery';
 
-const Container = (props) => {
+const Container = props => {
   const mediaQuery = useMediaQuery();
   const isSmallScreen = mediaQuery === 'xSmall' || mediaQuery === 'small';
 

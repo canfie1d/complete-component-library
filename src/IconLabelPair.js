@@ -1,5 +1,6 @@
 import Flex from './layout/Flex';
-import { Header, Image } from 'semantic-ui-react';
+import Header from './Header';
+import Image from './Image';
 import Icon from './Icon';
 
 const IconLabelPair = (props) => {

@@ -1,6 +1,6 @@
-import { Table } from 'semantic-ui-react';
+import TableCell from './TableCell';
 
-const TableHeaderCell = (props) => {
+const TableHeaderCell = props => {
   const handleClick = () => {
     if (props.noSort) return null;
 
@@ -15,10 +15,13 @@ const TableHeaderCell = (props) => {
           : 'ascending',
     });
   };
+  const classes = [sorted, className];
 
   return (
-    <Table.HeaderCell
+    <TableCell
+      {...rest}
       width={props.width}
+      className={classNames(classes)}
       sorted={
         props.sort?.sortBy === props.field ? props.sort?.direction : undefined
       }
@@ -26,7 +29,7 @@ const TableHeaderCell = (props) => {
       onClick={handleClick}
     >
       {props.label}
-    </Table.HeaderCell>
+    </TableCell>
   );
 };
 

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Input } from 'semantic-ui-react';
+import Input from './Input';
 
 const moneyRegEx = new RegExp(/^[0-9]+(\.[0-9]{1,2})?$/);
 

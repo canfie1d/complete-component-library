@@ -1,62 +1,57 @@
 import { useEffect, useContext } from 'react';
-import { Context } from '../contexts/AppStore';
 import { Route, Redirect } from 'react-router-dom';
-import { Loader } from 'semantic-ui-react';
-import { useAuth0 } from '../services/auth';
+import Loader from './Loader';
 
 const PrivateRoute = ({
+  loading,
+  loaderText,
+  fallbackRedirect,
+  authenticated,
   exact,
   path,
-  permissions,
-  fallbackRedirect,
   component: Component,
 }) => {
-  const {
-    loading: authLoading,
-    isAuthenticated,
-    loginWithRedirect,
-  } = useAuth0();
-  const [appState] = useContext(Context);
-
   useEffect(() => {
-    if (!authLoading && !isAuthenticated && !fallbackRedirect) {
-      loginWithRedirect({
-        appState: {
-          target: path,
-        },
-      });
+    if (!loading && !authenticated && !fallbackRedirect) {
+      props.handleRedirect();
     }
-  }, [authLoading, isAuthenticated, fallbackRedirect]); //eslint-disable-line
+  }, [loading, authenticated]); //eslint-disable-line
 
-  if (
-    (!permissions && isAuthenticated) ||
-    authLoading ||
-    (!fallbackRedirect && !isAuthenticated)
-  ) {
+  if (loading) {
     return (
       <Loader size='large' active>
-        Loading...
+        {loaderText}
       </Loader>
     );
   }
-
-  // if (!authLoading && isAuthenticated && state.user.isDriverAccount) {
-  //   return <SubdomainRedirect subdomain='driver' port='3003' to='/trips' />;
-  // }
 
   return (
     <Route
       exact={exact}
       path={path}
-      render={(props) =>
-        !isAuthenticated && fallbackRedirect ? (
+      render={props =>
+        !authenticated && fallbackRedirect ? (
           <Redirect to={fallbackRedirect} />
         ) : (
-          <Component permissions={appState.permissions} {...props} />
+          <Component {...props} />
         )
       }
     />
   );
+};
+
+PrivateRoute.defaultProps = {
+  loaderText: 'Loading...',
+};
+
+PrivateRoute.propsTypes = {
+  authenticated: PropTypes.bool,
+  loading: PropTypes.bool,
+  loaderText: PropTypes.string,
+  fallbackRedirect: PropTypes.string,
+  exact: PropTypes.bool,
+  path: PropTypes.string,
+  component: PropTypes.node,
 };
 
 export default PrivateRoute;
