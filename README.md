@@ -30,6 +30,8 @@
 ## Layout
 
 - Container
+- Two Column Container
+- Three Column Container
 - Fixed Action Bar
 - Flex
   - Flex Row
@@ -64,6 +66,7 @@
 - Menu Nav
 - Mobile Nav
 - Nav
+- ProgressiveImage
 - Video
 - View Switcher
 - Button

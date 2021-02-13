@@ -24,13 +24,12 @@ export { default as TimePicker } from './inputs/TimePicker';
 export { default as TimeRange } from './inputs/TimeRange';
 
 export { default as Container } from './layout/Container';
+export { default as TwoColumnContainer } from './layout/TwoColumnContainer';
+export { default as ThreeColumnContainer } from './layout/ThreeColumnContainer';
 export { default as FixedActionBar } from './layout/FixedActionBar';
 export { default as Flex } from './layout/Flex';
-export { default as FlexColumn } from './layout/FlexColumn';
-export { default as FlexRow } from './layout/FlexRow';
 export { default as Footer } from './layout/Footer';
 export { default as AppHeader } from './layout/Header';
-export { default as ThreeColumnSection } from './layout/ThreeColumnSection';
 
 export { default as Pagination } from './table/Pagination';
 export { default as Table } from './table/Table';
@@ -59,5 +58,6 @@ export { default as MenuNav } from './MenuNav';
 export { default as MobileNav } from './MobileNav';
 export { default as Nav } from './Nav';
 export { default as PrivateRoute } from './PrivateRoute';
+export { default as ProgressiveImage } from './ProgressiveImage';
 export { default as Video } from './Video';
 export { default as ViewSwitcher } from './ViewSwitcher';
