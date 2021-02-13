@@ -3,7 +3,7 @@ import Container from './Container';
 import Divider from '../Divider';
 import Flex from './Flex';
 
-const ThreeColumnSection = props => {
+const ThreeColumnContainer = props => {
   const pStyle = {
     maxWidth: '300px',
     margin: 'auto',
@@ -51,8 +51,8 @@ const ThreeColumnSection = props => {
   );
 };
 
-ThreeColumnSection.defaultProps = {
+ThreeColumnContainer.defaultProps = {
   verticalAlign: 'middle',
 };
 
-export default ThreeColumnSection;
+export default ThreeColumnContainer;
