@@ -41,7 +41,6 @@ export { default as Alert } from './Alert';
 export { default as AlertDialog } from './AlertDialog';
 export { default as AnalyticsListener } from './AnalyticsListener';
 export { default as Button } from './Button';
-export { default as Count } from './Count';
 export { default as Divider } from './Divider';
 export { default as ErrorBoundary } from './ErrorBoundary';
 export { default as ErrorFallback } from './ErrorFallback';

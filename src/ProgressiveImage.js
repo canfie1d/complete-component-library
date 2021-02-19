@@ -1,5 +1,5 @@
-import React, { useState, useRef } from 'react';
-import { Image } from 'semantic-ui-react';
+import { useState, useRef } from 'react';
+import Image from './Image';
 
 const ProgressiveImage = props => {
   const [highResImageLoaded, setHighResImageLoaded] = useState(false);
@@ -14,7 +14,7 @@ const ProgressiveImage = props => {
         }}
         ref={ref}
         src={props.src}
-        alt=""
+        alt=''
       />
       <Image
         {...props}
@@ -27,7 +27,7 @@ const ProgressiveImage = props => {
           ...(highResImageLoaded && { opacity: 0 }),
         }}
         src={props.placeholderSrc}
-        alt=""
+        alt=''
       />
     </>
   );

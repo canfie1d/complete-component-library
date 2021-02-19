@@ -8,7 +8,6 @@
 - DateTime
 - Dropdown
 - Input
-- List
 - TextArea
 
 ## Inputs
@@ -19,6 +18,7 @@
 - Date Range
 - Date Time Picker
 - File Upload
+- Image Upload
 - Money
 - Formatted Number
 - Phone Number
@@ -40,24 +40,17 @@
 - Header
 - Footer
 
-## Map
-
-- Map
-- Marker Map
-- Route Map
-
 ## Table
 
 - Table
-- Table Card
 - Table Filter
+- Table Cell
 - Table HeaderCell
 
 ## Components
 
 - Alert
 - AlertDialog
-- Count
 - Divider
 - Hero
 - Icon
@@ -81,6 +74,7 @@
 - Analytics Listener
 - Error Boundary
 - Error Fallback
+- Geolocation
 
 ## Utility Functions
 
@@ -109,4 +103,3 @@
 ## Needed
 
 - Card
-- Label

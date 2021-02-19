@@ -12,19 +12,13 @@
     "url": "https://github.com/canfie1d/complete-component-library/issues"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.13",
-    "@babel/node": "^7.12.13",
-    "@babel/plugin-proposal-object-rest-spread": "^7.12.13",
-    "@babel/preset-env": "^7.12.13",
-    "babel-cli": "^6.26.0",
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/preset-react": "^7.12.13",
     "babel-loader": "8.1.0",
-    "babel-preset-react-app": "^10.0.0",
-    "cherry-pick": "^0.5.0",
-    "copy-webpack-plugin": "^6.2.1",
-    "fs-extra": "^9.1.0",
+    "filemanager-webpack-plugin": "^3.1.0",
     "webpack": "4.44.2",
-    "webpack-cli": "^4.4.0",
-    "yargs": "^16.2.0"
+    "webpack-cli": "^4.4.0"
   },
   "peerDependencies": {
     "react": "^17.0.1",
@@ -33,17 +27,16 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
-    "axios-hooks": "^2.3.0",
+    "ccl-scss": "1.0.0-beta.1",
+    "cherry-pick": "^0.5.0",
     "classnames": "2.2.6",
-    "fw-semantic-ui-scss": "^2.4.1-beta.7",
     "moment": "^2.29.1",
     "prop-types": "^15.7.2",
     "rc-time-picker": "^3.7.3",
     "react-datepicker": "^3.4.1",
     "react-dropzone": "^11.3.1",
-    "react-error-boundary": "^3.1.0",
     "react-ga": "3.3.0",
-    "react-use": "^17.1.0"
+    "react-use": "^17.1.1"
   },
   "scripts": {
     "build": "node build.js"

@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import FileUpload from './inputs/FileUpload';
-import Flex from './layout/Flex';
-import Image from './Image';
-import Icon from './Icon';
-import Loader from './Loader';
+import FileUpload from './FileUpload';
+import Flex from '../layout/Flex';
+import Image from '../Image';
+import Icon from '../Icon';
+import Loader from '../Loader';
 
 const ImageUpload = props => {
   const [uploading, setUploading] = useState(false);
